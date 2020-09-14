@@ -10,12 +10,10 @@ export class AppComponent {
   myValue = "";
   myDisabled = false;
 
-  constructor(){
-    this.myValue = "";
-    this.myDisabled = false;
-    setInterval(() => {
-      this.myValue = Math.random().toString(),
-      this.myDisabled = Math.random() > 0.5
-    }, 500)
+  constructor(){}
+
+  callThisFunction() {
+    this.myDisabled = !this.myDisabled;
+    console.log(this.myDisabled);
   }
 }
