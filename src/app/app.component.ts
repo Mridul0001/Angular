@@ -7,5 +7,15 @@ import { HelloComponent } from './hello/hello.component';
 })
 
 export class AppComponent {
-  title = 'intro';
+  myValue = "";
+  myDisabled = false;
+
+  constructor(){
+    this.myValue = "";
+    this.myDisabled = false;
+    setInterval(() => {
+      this.myValue = Math.random().toString(),
+      this.myDisabled = Math.random() > 0.5
+    }, 500)
+  }
 }
