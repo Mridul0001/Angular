@@ -1,2 +1,3 @@
-<input type="text" [(ngModel)]="text" />
-{{text}}
+<ul>
+  <li *ngFor="let record of records; let evenRecord = even; let oddRecord = odd" [ngClass] = "{odd: oddRecord, even: evenRecord}">{{record}}</li>
+</ul>
