@@ -7,13 +7,12 @@ import { HelloComponent } from './hello/hello.component';
 })
 
 export class AppComponent {
-  myValue = "";
-  myDisabled = false;
+  text = "";
 
   constructor(){}
 
-  callThisFunction() {
-    this.myDisabled = !this.myDisabled;
-    console.log(this.myDisabled);
+  updateValue(event) {
+    this.text = event.target.value;
+    console.log(event.target.value);
   }
 }
