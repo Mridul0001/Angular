@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecordsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
 
-  getData(){
-    return ["Apple", "Orange", "Mango", "Banana"]
+  }
+
+  getData() {
+    return this.http.get('/api/file.php')
   }
 }

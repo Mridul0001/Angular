@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { HelloComponent } from './hello/hello.component';
 import {RecordsService} from './records.service';
 
+interface myData {
+  obj: Object
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +18,9 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.records = this.myFirstService.getData();
+    this.myFirstService.getData<myData>()
+    .subscribe(data => {
+        this.records = data.obj
+    })
   }
 }
